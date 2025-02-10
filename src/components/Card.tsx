@@ -1,4 +1,3 @@
-"use client";
 import React from "react";
 import Image from "next/image";
 
@@ -10,15 +9,24 @@ interface CardProps {
   link: string;
 }
 
+const tagColors: { [key: string]: string } = {
+  HTML: "bg-red-500 text-white",
+  CSS: "bg-blue-500 text-white",
+  JavaScript: "bg-yellow-500 text-black",
+  NextJS: "bg-black text-white",
+  Typescript: "bg-indigo-500 text-white",
+  All: "bg-gray-500 text-white",
+};
+
 const Card: React.FC<CardProps> = ({ title, desc, img, tags, link }) => {
   return (
     <div className="relative group overflow-hidden rounded-lg shadow-md w-full max-w-sm">
       {/* Project Image */}
       <Image
-        src={img}  // Corrected
-        alt={title} // Corrected
-        width={400} // Adjust width
-        height={300} // Adjust height
+        src={img}
+        alt={title}
+        width={300}
+        height={200}
         className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-300"
       />
 
@@ -35,14 +43,16 @@ const Card: React.FC<CardProps> = ({ title, desc, img, tags, link }) => {
       </div>
 
       {/* Project Info */}
-      <div className="mt-4">
+      <div className="mt-4 p-4">
         <h3 className="text-lg font-semibold">{title}</h3>
         <p className="text-sm text-gray-600">{desc}</p>
         <div className="flex flex-wrap gap-2 mt-2">
           {tags.map((tag, index) => (
             <span
               key={index}
-              className="text-xs text-black bg-gray-200 px-2 py-1 rounded-md"
+              className={`inline-block px-2 py-1 rounded-full text-xs font-semibold mr-2 mt-2 ${
+                tagColors[tag] || "bg-gray-500 text-white"
+              }`}
             >
               {tag}
             </span>

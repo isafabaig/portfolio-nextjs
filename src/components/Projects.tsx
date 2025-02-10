@@ -1,10 +1,10 @@
 "use client";
 
 import React, { useState } from "react";
-import Heading from "./Heading";
 import Card from "./Card";
+import Heading from "./Heading";
 
-const data = [
+const projects = [
   {
     id: 0,
     title: "Restaurant Clone Website",
@@ -86,78 +86,57 @@ const data = [
     link: "https://second-hackathon-five.vercel.app/",
   },
 ];
+const tagOptions = ["All", "HTML", "CSS", "JavaScript", "NextJS", "Typescript"];
 
-export default function Projects() {
+const Projects = () => {
   const [selectedTag, setSelectedTag] = useState("All");
 
-  // Map tags to specific colors
-  const tagColors = {
-    HTML: "bg-orange-400 text-white",
-    CSS: "bg-blue-400 text-white",
-    JavaScript: "bg-yellow-400 text-black",
-    NextJS: "bg-gray-800 text-white",
-    Typescript: "bg-indigo-400 text-white",
-    All: "bg-gray-300 text-black", // For the "All" button
-  };
-
-  // Filter data based on the selected tag
-  const filteredData =
-    selectedTag === "All"
-      ? data
-      : data.filter((project) => project.tags.includes(selectedTag));
+  // Filter projects based on selected tag
+  const filteredProjects = selectedTag === "All" 
+    ? projects 
+    : projects.filter(project => project.tags.includes(selectedTag));
 
   return (
-    <div id="projects" className="pt-12">
-      {/* Heading with blue gradient */}
-      <Heading
-        title={
-          <>
-            <h1 className="font-bold text-center bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 text-transparent bg-clip-text">
-              See My <span className="text-purple-500">Projects</span>
-            </h1>
-          </>
-        }
-      />
+    <section className=" text-blue-600 py-16">
+      {/* Section Heading */}
+      <Heading title="My Projects" />
 
-      {/* Filter Buttons */}
-      <div className="flex justify-center space-x-4 mb-8 mt-6">
-        {["All", ...Object.keys(tagColors).filter((tag) => tag !== "All")].map(
-          (tag) => (
-            <button
-              key={tag}
-              onClick={() => setSelectedTag(tag)}
-              className={`px-4 py-2 rounded-md transition-all duration-300 ${
-                selectedTag === tag
-                  ? `${tagColors[tag]} scale-105`
-                  : "bg-gray-200 hover:bg-gray-300"
-              }`}
-            >
-              {tag}
-            </button>
-          )
-        )}
-      </div>
-
-      {/* Project Cards */}
-      <div className="grid gap-10 xl:gap-0 xl:gap-y-10 md:grid-cols-2 lg:grid-cols-3 place-items-center">
-        {filteredData.map((el) => (
-          <Card
-            key={el.id}
-            title={el.title}
-            desc={el.desc}
-            img={el.img}
-            tags={el.tags.map((tag) => (
-              <span
-                key={tag}
-                className={`inline-block px-2 py-1 rounded-full text-xs font-semibold mr-2 mt-2 ${tagColors[tag]}`}
-              >
-                {tag}
-              </span>
-            ))}
-            link={el.link}
-          />
+      {/* Tag Filter Buttons */}
+      <div className="flex justify-center gap-3 mt-6">
+        {tagOptions.map((tag) => (
+          <button
+            key={tag}
+            onClick={() => setSelectedTag(tag)}
+            className={`px-4 py-2 rounded-md font-semibold transition ${
+              selectedTag === tag ? "bg-blue-500 text-white" : "bg-gray-700 hover:bg-gray-600"
+            }`}
+          >
+            {tag}
+          </button>
         ))}
       </div>
-    </div>
+
+      {/* Project Cards Grid */}
+      <div className="container mx-auto px-4 mt-10">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+          {filteredProjects.length > 0 ? (
+            filteredProjects.map((project) => (
+              <Card
+                key={project.id}
+                title={project.title}
+                desc={project.desc}
+                img={project.img}
+                tags={project.tags}
+                link={project.link}
+              />
+            ))
+          ) : (
+            <p className="text-center col-span-3 text-gray-400">No projects found for "{selectedTag}"</p>
+          )}
+        </div>
+      </div>
+    </section>
   );
-}
+};
+
+export default Projects;

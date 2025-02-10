@@ -3,7 +3,6 @@ import { Typewriter } from "react-simple-typewriter";
 import React from "react";
 import Navbar from "./Navbar";
 import Image from "next/image";
-import { px } from "framer-motion";
 
 export default function Hero() {
   return (

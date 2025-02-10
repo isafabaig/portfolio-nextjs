@@ -2,6 +2,7 @@
 import React from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
+import router from "next/router";
 
 export default function About() {
   return (
@@ -19,7 +20,7 @@ export default function About() {
 
       <div  id="about" className="text-center text-xl">
         {/* Explore more Button */}
-        <Link href={'/AboutDetail'}>
+        <Link href={"/aboutdetail"}>
         <motion.button
    className="p-4 bg-blue-400 rounded shadow-md text-white"
    whileHover={{

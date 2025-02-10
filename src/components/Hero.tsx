@@ -1,9 +1,7 @@
 "use client";
-import { useEffect, useState } from "react";
 import { Typewriter } from "react-simple-typewriter";
 import React from "react";
 import Navbar from "./Navbar";
-// import CVSection from "./CVSection";
 
 export default function Hero() {
   return (

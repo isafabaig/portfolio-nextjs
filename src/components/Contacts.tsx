@@ -1,10 +1,5 @@
 import React from "react";
 import { FaLinkedin, FaGithub } from "react-icons/fa";
-import { MdEmail } from "react-icons/md";
-import { BsFillTelephoneFill } from "react-icons/bs";
-
-
-
 
 const Contacts = () => {
     return(

@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import { motion } from "framer-motion";
-import CVSection from "@/components/CVSection"; // Ensure the correct path
+import CVSection from "@/components/CVSection";
 import { Typewriter } from "react-simple-typewriter";
 
 const skills = [

@@ -131,8 +131,10 @@ const Projects = () => {
               />
             ))
           ) : (
-            <p className="text-center col-span-3 text-gray-400">No projects found for "{selectedTag}"</p>
-          )}
+            <p className="text-center col-span-3 text-gray-400">
+  No projects found for &quot;{selectedTag}&quot;
+</p>
+)}
         </div>
       </div>
     </section>

@@ -2,6 +2,8 @@
 import { Typewriter } from "react-simple-typewriter";
 import React from "react";
 import Navbar from "./Navbar";
+import Image from "next/image";
+import { px } from "framer-motion";
 
 export default function Hero() {
   return (
@@ -15,9 +17,6 @@ export default function Hero() {
         backgroundImage: `url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQKcnhljdnwiXE6a1pnuq6wuGzbOWNhkHbJHshsXg9wKarKh5FM9EMNZZhQQNyb-OKwyXc&usqp=CAU' ) `, 
       }}
     >
-  
-
-     
 
       {/* Content Container */}
       <div className="container mx-auto flex items-center justify-center space-x-8">
@@ -38,22 +37,20 @@ export default function Hero() {
         />
       </span>
     </h1>
-          {/* <div> */}
-        {/* <CVSection /> */}
-          {/* </div> */}
-        </div>
 
         {/* Profile Picture */}
         <div>
-          <img
-            src="/image/bgimage.png"
-            alt="Profile Picture"
-            className=" w-[250px] h-[250px] lg:w-[300px] lg:h-[300px] object-cover rounded-full border-4 border-white shadow-lg"
+          <Image
+          src={"/image/bgimage.png"}
+          alt="Profile Picture"
+          width={200} height={200}
+          className="lg:w-[300px] lg:h-[300px] object-cover rounded-full border-4 border-white shadow-lg"
           />
         </div>
+        
       </div>
     </div>
-
+</div>
 
     </div>
 

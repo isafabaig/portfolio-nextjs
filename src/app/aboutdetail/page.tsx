@@ -37,7 +37,7 @@ export default function Aboutdetail() { // Fixed function name
         animate={{ opacity: 1 }}
         transition={{ duration: 1, delay: 0.3 }}
       >
-        I'm a <strong>passionate frontend developer</strong> dedicated to crafting intuitive, <strong>responsive, and interactive web experiences</strong>.
+        I am a <strong>passionate frontend developer</strong> dedicated to crafting intuitive, <strong>responsive, and interactive web experiences</strong>.
         With expertise in modern <strong>UI technologies and frameworks</strong>, I specialize in building visually appealing and high-performance applications.
       </motion.p>
 

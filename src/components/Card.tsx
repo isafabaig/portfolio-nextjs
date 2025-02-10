@@ -1,20 +1,24 @@
+"use client";
 import React from "react";
+import Image from "next/image";
 
 interface CardProps {
   title: string;
   desc: string;
   img: string;
   tags: string[];
-  link: string; 
+  link: string;
 }
 
 const Card: React.FC<CardProps> = ({ title, desc, img, tags, link }) => {
   return (
     <div className="relative group overflow-hidden rounded-lg shadow-md w-full max-w-sm">
       {/* Project Image */}
-      <img
-        src={img}
-        alt={title}
+      <Image
+        src={img}  // Corrected
+        alt={title} // Corrected
+        width={400} // Adjust width
+        height={300} // Adjust height
         className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-300"
       />
 
@@ -33,16 +37,12 @@ const Card: React.FC<CardProps> = ({ title, desc, img, tags, link }) => {
       {/* Project Info */}
       <div className="mt-4">
         <h3 className="text-lg font-semibold">{title}</h3>
-        <p className="text-sm text-white-600">{desc}</p>
+        <p className="text-sm text-gray-600">{desc}</p>
         <div className="flex flex-wrap gap-2 mt-2">
-
-
-            
-
           {tags.map((tag, index) => (
             <span
               key={index}
-              className="text-xs text-black  bg-gray-200 px-2 py-1 rounded-md"
+              className="text-xs text-black bg-gray-200 px-2 py-1 rounded-md"
             >
               {tag}
             </span>
@@ -54,6 +54,3 @@ const Card: React.FC<CardProps> = ({ title, desc, img, tags, link }) => {
 };
 
 export default Card;
-
-
-

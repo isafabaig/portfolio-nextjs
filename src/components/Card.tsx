@@ -15,12 +15,14 @@ const tagColors: { [key: string]: string } = {
   JavaScript: "bg-yellow-500 text-black",
   NextJS: "bg-black text-white",
   Typescript: "bg-indigo-500 text-white",
+  Python: "bg-yellow-300 text-black",
+  Streamlit: "bg-orange-300 text-black",
   All: "bg-gray-500 text-white",
 };
 
 const Card: React.FC<CardProps> = ({ title, desc, img, tags, link }) => {
   return (
-    <div className="relative group overflow-hidden rounded-lg shadow-md w-full max-w-sm">
+    <div className="relative group overflow-hidden rounded-lg shadow-md w-full max-w-sm" data-aos="fade-up">
       {/* Project Image */}
       <Image
         src={img}

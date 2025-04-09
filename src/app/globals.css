@@ -4,14 +4,9 @@
 
 @layer base {
   body {
-    /* background-image: url("https://w7.pngwing.com/pngs/495/874/png-transparent-stars-background-blue-fashion-background.png");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    opacity: 4; */
-    color: black;
-    background-color: white;
-
+    @apply text-white; 
+    background: linear-gradient(to right, #000, #4b5563);
+    font-family: sans-serif;
   }
 }
 
@@ -22,7 +17,15 @@
   #cards{
     @apply cursor-pointer hover:transition duration-100 transform hover:scale-110 hover:opacity-60
   }
-  #hero{
-    background-image: url('/bgimage.png');
+
   }
-}
+  @keyframes gradient {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+  
+  .animate-gradient {
+    background-size: 200% 200%;
+    animation: gradient 4s ease infinite;
+  }

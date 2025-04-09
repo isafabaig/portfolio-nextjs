@@ -85,30 +85,80 @@ const projects = [
     tags: ["NextJS"],
     link: "https://second-hackathon-five.vercel.app/",
   },
+  {
+    id: 10,
+    title: "E-commerce web design",
+    desc: "E-commerce Web Design - Alibaba Style (Figma Marketplace)",
+    img: "/image/figma.png",
+    tags: ["NextJS"],
+    link: "https://internship-ecommerce-web.vercel.app/",
+  },
+  {
+    id: 11,
+    title: "Library Book Manager",
+    desc: "A Streamlit app for managing book records — add, search, and update library books with ease.",
+    img: "/image/book.png",
+    tags: ["Python", "Streamlit"],
+    link: "https://library-manager--ui-safaaamir.streamlit.app/",
+  },
+  {
+    id: 12,
+    title: "Password Strength Meter",
+    desc: "An interactive password checker that visually shows strength based on complexity and safety rules.",
+    img: "/image/password strength.png",
+    tags: ["Python", "Streamlit"],
+    link: "https://password-strength-meter--safaaamir.streamlit.app/",
+  },
+  {
+    id: 13,
+    title: "Unit Converter",
+    desc: "A handy Streamlit tool to convert units like length, weight, and temperature in real-time.",
+    img: "/image/unit-converter.png",
+    tags: ["Python", "Streamlit"],
+    link: "https://unit-converter-bysafaaamir.streamlit.app/",
+  },
+  {
+    id: 14,
+    title: "Text Analyzer",
+    desc: "Analyze any text with features like word count, sentiment detection, and readability score.",
+    img: "/image/textanalyzer.png",
+    tags: ["Python", "Streamlit"],
+    link: "https://text-analyzer-python-safaaamir.streamlit.app/",
+  },
 ];
-const tagOptions = ["All", "HTML", "CSS", "JavaScript", "NextJS", "Typescript"];
+
+const tagColors = {
+  HTML: "bg-red-500",
+  CSS: "bg-blue-500",
+  JavaScript: "bg-yellow-500",
+  NextJS: "bg-gray-800",
+  Typescript: "bg-sky-600",
+  Python: "bg-green-600",
+};
+
+const tagOptions = ["All", ...Object.keys(tagColors)];
 
 const Projects = () => {
   const [selectedTag, setSelectedTag] = useState("All");
 
-  // Filter projects based on selected tag
-  const filteredProjects = selectedTag === "All" 
-    ? projects 
-    : projects.filter(project => project.tags.includes(selectedTag));
+  const filteredProjects =
+    selectedTag === "All"
+      ? projects
+      : projects.filter((project) => project.tags.includes(selectedTag));
 
   return (
-    <section className=" text-blue-600 py-16">
-      {/* Section Heading */}
-      <Heading title="My Projects" />
+    <section className="text-blue-600 ">
+      <Heading title="See my Projects" />
 
-      {/* Tag Filter Buttons */}
-      <div className="flex justify-center gap-3 mt-6">
+      <div className="flex justify-center flex-wrap gap-3 mt-8">
         {tagOptions.map((tag) => (
           <button
             key={tag}
             onClick={() => setSelectedTag(tag)}
-            className={`px-4 py-2 rounded-md font-semibold transition ${
-              selectedTag === tag ? "bg-blue-500 text-white" : "bg-gray-700 hover:bg-gray-600"
+            className={`px-4 py-2 rounded-full font-semibold transition text-white shadow-md ${
+              selectedTag === tag
+                ? `${tagColors[tag] || "bg-blue-500"}`
+                : "bg-gray-600 hover:bg-gray-700"
             }`}
           >
             {tag}
@@ -116,7 +166,6 @@ const Projects = () => {
         ))}
       </div>
 
-      {/* Project Cards Grid */}
       <div className="container mx-auto px-4 mt-10">
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
           {filteredProjects.length > 0 ? (
@@ -132,9 +181,9 @@ const Projects = () => {
             ))
           ) : (
             <p className="text-center col-span-3 text-gray-400">
-  No projects found for &quot;{selectedTag}&quot;
-</p>
-)}
+              No projects found for &quot;{selectedTag}&quot;
+            </p>
+          )}
         </div>
       </div>
     </section>

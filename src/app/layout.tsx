@@ -3,6 +3,8 @@ import localFont from "next/font/local";
 import "./globals.css";
 import Footer from "@/components/Footer";
 import ScrollToTop from "@/components/ScrollToTop";
+import Navbar from "@/components/Navbar";
+import AOSWrapper from "./AOSWrapper";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -30,9 +32,11 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        <AOSWrapper>
         {children}
         <Footer />
         <ScrollToTop />
+        </AOSWrapper>
       </body>
     </html>
   );

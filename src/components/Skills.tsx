@@ -1,70 +1,131 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
+import {
+  SiHtml5,
+  SiCss3,
+  SiJavascript,
+  SiTypescript,
+  SiTailwindcss,
+  SiNextdotjs,
+  SiFigma,
+  SiBootstrap,
+  SiPython,
+} from "react-icons/si";
 
 const skills = [
-  { name: "HTML", percentage: 90 },
-  { name: "CSS", percentage: 85 },
-  { name: "JavaScript", percentage: 50 },
-  { name: "TypeScript", percentage: 50 },
-  { name: "Tailwind CSS", percentage: 80 },
-  { name: "Next.JS", percentage: 70 },
-  { name: "Figma", percentage: 70 },
-  { name: "Bootstrap", percentage: 60 },
+  {
+    name: "HTML",
+    percentage: 90,
+    icon: <SiHtml5 className="text-orange-600" />,
+    desc: "Solid understanding of semantic structure and web accessibility.",
+    color: "#f97316",
+  },
+  {
+    name: "CSS",
+    percentage: 85,
+    icon: <SiCss3 className="text-blue-600" />,
+    desc: "Proficient in layouts, animations, and responsiveness.",
+    color: "#2563eb",
+  },
+  {
+    name: "Tailwind CSS",
+    percentage: 80,
+    icon: <SiTailwindcss className="text-cyan-400" />,
+    desc: "Building fast UI with utility-first styling.",
+    color: "#22d3ee",
+  },
+  {
+    name: "Bootstrap",
+    percentage: 75,
+    icon: <SiBootstrap className="text-purple-600" />,
+    desc: "Experience with grid and components for quick layouts.",
+    color: "#9333ea",
+  },
+  {
+    name: "Next.js",
+    percentage: 70,
+    icon: <SiNextdotjs className="text-gray-900" />,
+    desc: "Using Next.js for building dynamic frontend-only apps.",
+    color: "#000",
+  },
+  {
+    name: "Figma",
+    percentage: 70,
+    icon: <SiFigma className="text-pink-500" />,
+    desc: "Translating clean Figma designs into pixel-perfect code.",
+    color: "#ec4899",
+  },
+  {
+    name: "JavaScript",
+    percentage: 50,
+    icon: <SiJavascript className="text-yellow-400" />,
+    desc: "Comfortable with DOM manipulation and interactivity.",
+    color: "#facc15",
+  },
+  {
+    name: "TypeScript",
+    percentage: 50,
+    icon: <SiTypescript className="text-blue-500" />,
+    desc: "Using TypeScript for type safety in React apps.",
+    color: "#3b82f6",
+  },
+  {
+    name: "Python",
+    percentage: 45,
+    icon: <SiPython className="text-yellow-500" />,
+    desc: "Currently learning and exploring Python with Streamlit.",
+    color: "#eab308",
+  },
 ];
 
-// Sort skills in descending order by percentage
-skills.sort((a, b) => b.percentage - a.percentage);
-
 const Skills = () => {
-  const [isVisible, setIsVisible] = useState(false);
+  const [visible, setVisible] = useState(false);
   const [showAll, setShowAll] = useState(false);
 
   useEffect(() => {
-    setIsVisible(true);
+    setVisible(true);
   }, []);
 
-  const displayedSkills = showAll ? skills : skills.slice(0, 4);
+  const displayedSkills = showAll ? skills : skills.slice(0, 6);
 
   return (
-    <div id="skills" className="py-10 bg-gray-50">
-      <h2 className="text-blue-500 font-bold text-6xl text-center">
-        My Skills
-      </h2>
-      <div className="pt-10 flex flex-wrap justify-center gap-8 mt-6">
-        {displayedSkills.map((skill, index) => (
+    <section id="skills" className="pt-24">
+      <h2 className="text-center text-5xl font-bold text-blue-500 mb-8" data-aos="fade-up">Technical Skills</h2>
+      <div className="flex flex-wrap justify-center gap-10 px-4" >
+        {displayedSkills.map((skill, idx) => (
           <div
-            key={index}
-            className="relative w-32 h-32 flex flex-col items-center transform transition-all duration-700 ease-in-out hover:scale-110 hover:shadow-lg hover:shadow-indigo-500/50"
+            key={idx}
+            className="w-64 p-5 bg-black rounded-2xl shadow-md hover:shadow-blue-400 transition-all duration-300 text-center" data-aos="fade-up"
           >
-            <div
-              className="relative w-32 h-32 rounded-full"
-              style={{
-                background: `conic-gradient(#4f46e5 ${isVisible ? skill.percentage * 3.6 : 0}deg, #e5e7eb 0deg)`,
-                transition: "background 2s ease-out",
-              }}
-            >
-              <div className="absolute inset-2 bg-white rounded-full flex items-center justify-center">
-                <span className="text-xl font-bold text-indigo-500">
-                  {isVisible ? skill.percentage : 0}%
-                </span>
+            <div className= "relative w-24 h-24 mx-auto transform transition-transform duration-300 hover:scale-110" data-aos="zoom-in">
+              <div
+                className="w-24 h-24 rounded-full"
+                style={{
+                  background: `conic-gradient(${skill.color} ${visible ? skill.percentage * 3.6 : 0}deg, #e5e7eb 0deg)`,
+                }}
+              >
+                <div className="absolute inset-2 bg-white rounded-full flex items-center justify-center text-2xl">
+                  {skill.icon}
+                </div>
               </div>
             </div>
-            <p className="mt-3 text-lg font-semibold text-gray-700">
-              {skill.name}
-            </p>
+            <h3 className="mt-4 text-xl font-semibold text-blue-600">{skill.name}</h3>
+            <p className="text-sm mt-1">{skill.desc}</p>
+            <p className="mt-2 text-indigo-600 font-bold text-lg">{skill.percentage}%</p>
           </div>
         ))}
       </div>
-      <div className="text-center mt-6">
+
+      <div className="text-center mt-8">
         <button
-          className="px-6 py-2 bg-indigo-500 text-white rounded-lg hover:bg-indigo-600 transition-all"
           onClick={() => setShowAll(!showAll)}
+          className="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition"
         >
           {showAll ? "Show Less" : "Show More"}
         </button>
       </div>
-    </div>
+    </section>
   );
 };
 

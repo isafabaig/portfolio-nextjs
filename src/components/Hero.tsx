@@ -1,57 +1,49 @@
 "use client";
-import { Typewriter } from "react-simple-typewriter";
 import React from "react";
+import { Typewriter } from "react-simple-typewriter";
 import Navbar from "./Navbar";
-import Image from "next/image";
 
 export default function Hero() {
   return (
-    <div>
- {/* Navbar */}
- <Navbar />
+    <div className="relative">
+      <Navbar />
 
-    <div
-      className="min-h-screen bg-cover bg-center flex items-center justify-center"
-      style={{
-        backgroundImage: `url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQKcnhljdnwiXE6a1pnuq6wuGzbOWNhkHbJHshsXg9wKarKh5FM9EMNZZhQQNyb-OKwyXc&usqp=CAU' ) `, 
-      }}
-    >
+      {/* Hero Section with Background Image */}
+      <div
+        className="relative min-h-screen flex items-center justify-center bg-cover bg-center px-4 sm:px-8 text-center"
+        style={{
+          backgroundImage: "url('/image/gradient-841143_1280.jpg')",
+        }}
+      >
+        {/* Optional overlay */}
+        <div className="absolute inset-0 bg-black bg-opacity-50 z-0" />
 
-      {/* Content Container */}
-      <div className="container mx-auto flex items-center justify-center space-x-8">
-        {/* Left Side: Name */}
-        <div className="text-center lg:text-left ">
+        {/* Content */}
+        <div className="relative z-10 flex flex-col items-center justify-center">
+          <h1 className="text-white text-5xl sm:text-6xl font-bold mb-4">
+            Hi, I am{" "}
+            <span className="bg-gradient-to-r from-yellow-400 via-pink-500 to-purple-500 bg-clip-text text-transparent">
+              Safa Aamir
+            </span>
+          </h1>
 
-          <h1 className="text-[40px] sm:text-[40px] lg:text-[60px] font-bold leading-tight">
-      I am <br />
-      <span className="text-blue-500">
-        <Typewriter
-          words={["Safa Aamir", "Front-end Developer"]}
-          loop={true}
-          cursor
-          cursorStyle="_"
-          typeSpeed={100}
-          deleteSpeed={50}
-          delaySpeed={1500}
-        />
-      </span>
-    </h1>
-
-        {/* Profile Picture */}
-        <div>
-          <Image
-          src={"/image/bgimage.png"}
-          alt="Profile Picture"
-          width={200} height={200}
-          className="lg:w-[300px] lg:h-[300px] object-cover rounded-full border-4 border-white shadow-lg"
-          />
+          <p className="mt-2 text-2xl sm:text-3xl text-gray-300 font-medium">
+            <Typewriter
+              words={[
+                "Front-end Developer",
+                "Pixel Perfectionist",
+                "Clean Code Advocate",
+              ]}
+              loop={true}
+              cursor
+              cursorStyle="|"
+              typeSpeed={100}
+              deleteSpeed={50}
+              delaySpeed={1500}
+            />
+          </p>
         </div>
-        
       </div>
     </div>
-</div>
-
-    </div>
-
   );
 }

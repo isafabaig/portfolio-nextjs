@@ -91,28 +91,43 @@ const Skills = () => {
 
   return (
     <section id="skills" className="pt-24">
-      <h2 className="text-center text-5xl font-bold text-blue-500 mb-8" data-aos="fade-up">Technical Skills</h2>
-      <div className="flex flex-wrap justify-center gap-10 px-4" >
+      <h2
+        className="text-center text-5xl font-bold text-blue-500 mb-8"
+        data-aos="fade-up"
+      >
+        Technical Skills
+      </h2>
+      <div className="flex flex-wrap justify-center gap-10 px-4">
         {displayedSkills.map((skill, idx) => (
           <div
             key={idx}
-            className="w-64 p-5 bg-black rounded-2xl shadow-md hover:shadow-blue-400 transition-all duration-300 text-center" data-aos="fade-up"
+            className="w-64 p-5 bg-black rounded-2xl shadow-md hover:shadow-blue-400 transition-all duration-300 text-center"
+            data-aos="fade-up"
           >
-            <div className= "relative w-24 h-24 mx-auto transform transition-transform duration-300 hover:scale-110" data-aos="zoom-in">
+            <div
+              className="relative w-24 h-24 mx-auto transition-transform duration-300 hover:scale-110"
+              data-aos="zoom-in"
+            >
               <div
                 className="w-24 h-24 rounded-full"
                 style={{
-                  background: `conic-gradient(${skill.color} ${visible ? skill.percentage * 3.6 : 0}deg, #e5e7eb 0deg)`,
+                  background: `conic-gradient(${skill.color} ${
+                    visible ? skill.percentage * 3.6 : 0
+                  }deg, #e5e7eb 0deg)`,
                 }}
               >
-                <div className="absolute inset-2 bg-white rounded-full flex items-center justify-center text-2xl">
+                <div className="absolute inset-2 bg-white rounded-full flex items-center justify-center text-4xl transition-transform duration-300 hover:scale-125">
                   {skill.icon}
                 </div>
               </div>
             </div>
-            <h3 className="mt-4 text-xl font-semibold text-blue-600">{skill.name}</h3>
+            <h3 className="mt-4 text-xl font-semibold text-blue-600">
+              {skill.name}
+            </h3>
             <p className="text-sm mt-1">{skill.desc}</p>
-            <p className="mt-2 text-indigo-600 font-bold text-lg">{skill.percentage}%</p>
+            <p className="mt-2 text-indigo-600 font-bold text-lg">
+              {skill.percentage}%
+            </p>
           </div>
         ))}
       </div>

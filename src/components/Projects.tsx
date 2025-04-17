@@ -11,7 +11,8 @@ const projects = [
     desc: "A Restaurant clone website by using HTML and CSS",
     img: "/image/project_01.png",
     tags: ["HTML", "CSS"],
-    link: "https://restaurant-clone-topaz.vercel.app/",
+    vercel: "https://restaurant-clone-topaz.vercel.app/",
+    github: "https://github.com/isafabaig/restaurant-clone",
   },
   {
     id: 1,
@@ -19,7 +20,8 @@ const projects = [
     desc: "A Pakola clone website by using HTML and CSS",
     img: "/image/project_02.png",
     tags: ["HTML", "CSS"],
-    link: "https://pakola-web-clone.vercel.app/",
+    vercel: "https://pakola-web-clone.vercel.app/",
+    github: "https://github.com/isafabaig/pakola-web---clone",
   },
   {
     id: 2,
@@ -27,7 +29,8 @@ const projects = [
     desc: "A clone website by using HTML, CSS and JavaScript",
     img: "/image/project_03.png",
     tags: ["HTML", "CSS", "JavaScript"],
-    link: "https://tech-force-pakistan-chi.vercel.app/#",
+    vercel: "https://pakola-web-clone.vercel.app/",
+    github: "https://github.com/isafabaig/Tech-Force-Pakistan",
   },
   {
     id: 3,
@@ -35,7 +38,8 @@ const projects = [
     desc: "A pixel-perfect Figma template building design",
     img: "/image/project_04.png",
     tags: ["NextJS"],
-    link: "https://milestone5-safa.vercel.app/",
+    vercel: "https://pakola-web-clone.vercel.app/",
+    github: "https://github.com/isafabaig/figma-template-building",
   },
   {
     id: 4,
@@ -43,7 +47,8 @@ const projects = [
     desc: "A HTML, CSS and JS based stop watch app",
     img: "/image/project_05.png",
     tags: ["HTML", "CSS", "JavaScript"],
-    link: "https://stop-watch-js-one.vercel.app/",
+    vercel: "https://stop-watch-js-one.vercel.app/",
+    github: "https://github.com/isafabaig/stop-watch-JS",
   },
   {
     id: 5,
@@ -51,7 +56,8 @@ const projects = [
     desc: "HTML, CSS and JS based Todo List for managing and organizing regular work",
     img: "/image/project_06.png",
     tags: ["HTML", "CSS", "JavaScript"],
-    link: "https://to-do-list-seven-theta-16.vercel.app/",
+    vercel: "https://to-do-list-seven-theta-16.vercel.app/",
+    github: "https://github.com/isafabaig/To-do-List",
   },
   {
     id: 6,
@@ -59,7 +65,8 @@ const projects = [
     desc: "A React and Typescript based app to check current balance and withdraw your cash",
     img: "/image/project_07.png",
     tags: ["Typescript"],
-    link: "https://milestone5-safa.vercel.app/",
+    vercel: "https://milestone5-safa.vercel.app/",
+    github: "https://github.com/yourusername/restaurant-clone",
   },
   {
     id: 7,
@@ -67,7 +74,8 @@ const projects = [
     desc: "A React and Typescript based number guessing game",
     img: "/image/project_08.png",
     tags: ["Typescript"],
-    link: "https://cli-number-guessing-eight.vercel.app/",
+    vercel: "https://cli-number-guessing-eight.vercel.app/",
+    github: "https://github.com/yourusername/restaurant-clone",
   },
   {
     id: 8,
@@ -75,7 +83,8 @@ const projects = [
     desc: "HTML, CSS based resume",
     img: "/image/project_09.png",
     tags: ["HTML", "CSS"],
-    link: "https://live-resume-chi.vercel.app/",
+    vercel: "https://live-resume-chi.vercel.app/",
+    github: "https://github.com/yourusername/restaurant-clone",
   },
   {
     id: 9,
@@ -83,7 +92,8 @@ const projects = [
     desc: "A dynamic Rental Car website by using Next.JS",
     img: "/image/Ads 2.png",
     tags: ["NextJS"],
-    link: "https://second-hackathon-five.vercel.app/",
+    vercel: "https://second-hackathon-five.vercel.app/",
+    github: "https://github.com/yourusername/restaurant-clone",
   },
   {
     id: 10,
@@ -91,7 +101,8 @@ const projects = [
     desc: "E-commerce Web Design - Alibaba Style (Figma Marketplace)",
     img: "/image/figma.png",
     tags: ["NextJS"],
-    link: "https://internship-ecommerce-web.vercel.app/",
+    vercel: "https://internship-ecommerce-web.vercel.app/",
+    github: "https://github.com/isafabaig/internship-ecommerceWeb",
   },
   {
     id: 11,
@@ -99,7 +110,8 @@ const projects = [
     desc: "A Streamlit app for managing book records — add, search, and update library books with ease.",
     img: "/image/book.png",
     tags: ["Python", "Streamlit"],
-    link: "https://library-manager--ui-safaaamir.streamlit.app/",
+    vercel: "https://library-manager--ui-safaaamir.streamlit.app/",
+    github: "https://github.com/isafabaig/library-manager--UI",
   },
   {
     id: 12,
@@ -107,7 +119,8 @@ const projects = [
     desc: "An interactive password checker that visually shows strength based on complexity and safety rules.",
     img: "/image/password strength.png",
     tags: ["Python", "Streamlit"],
-    link: "https://password-strength-meter--safaaamir.streamlit.app/",
+    vercel: "https://password-strength-meter--safaaamir.streamlit.app/",
+    github: "https://github.com/isafabaig/Password-strength-meter--python",
   },
   {
     id: 13,
@@ -115,7 +128,8 @@ const projects = [
     desc: "A handy Streamlit tool to convert units like length, weight, and temperature in real-time.",
     img: "/image/unit-converter.png",
     tags: ["Python", "Streamlit"],
-    link: "https://unit-converter-bysafaaamir.streamlit.app/",
+    vercel: "https://unit-converter-bysafaaamir.streamlit.app/",
+    github: "https://github.com/isafabaig/unit-converter",
   },
   {
     id: 14,
@@ -123,7 +137,8 @@ const projects = [
     desc: "Analyze any text with features like word count, sentiment detection, and readability score.",
     img: "/image/textanalyzer.png",
     tags: ["Python", "Streamlit"],
-    link: "https://text-analyzer-python-safaaamir.streamlit.app/",
+    vercel: "https://text-analyzer-python-safaaamir.streamlit.app/",
+    github: "https://github.com/isafabaig/Text-Analyzer-python",
   },
 ];
 
@@ -134,6 +149,7 @@ const tagColors = {
   NextJS: "bg-gray-800",
   Typescript: "bg-sky-600",
   Python: "bg-green-600",
+  Streamlit: "bg-orange-500",
 };
 
 const tagOptions = ["All", ...Object.keys(tagColors)];
@@ -157,7 +173,7 @@ const Projects = () => {
             onClick={() => setSelectedTag(tag)}
             className={`px-4 py-2 rounded-full font-semibold transition text-white shadow-md ${
               selectedTag === tag
-                ? `${tagColors[tag] || "bg-blue-500"}`
+                ? `${tag === "All" ? "bg-blue-500" : tagColors[tag as keyof typeof tagColors] || "bg-blue-500"}`
                 : "bg-gray-600 hover:bg-gray-700"
             }`}
           >
@@ -176,7 +192,8 @@ const Projects = () => {
                 desc={project.desc}
                 img={project.img}
                 tags={project.tags}
-                link={project.link}
+                vercel={project.vercel}
+                github={project.github}
               />
             ))
           ) : (

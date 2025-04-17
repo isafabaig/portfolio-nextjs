@@ -1,12 +1,15 @@
 import React from "react";
 import Image from "next/image";
+import { FaGithub } from "react-icons/fa";
+import { SiVercel } from "react-icons/si";
 
 interface CardProps {
   title: string;
   desc: string;
   img: string;
   tags: string[];
-  link: string;
+  vercel: string;
+  github?: string;
 }
 
 const tagColors: { [key: string]: string } = {
@@ -20,7 +23,7 @@ const tagColors: { [key: string]: string } = {
   All: "bg-gray-500 text-white",
 };
 
-const Card: React.FC<CardProps> = ({ title, desc, img, tags, link }) => {
+const Card: React.FC<CardProps> = ({ title, desc, img, tags, vercel, github }) => {
   return (
     <div className="relative group overflow-hidden rounded-lg shadow-md w-full max-w-sm" data-aos="fade-up">
       {/* Project Image */}
@@ -32,15 +35,27 @@ const Card: React.FC<CardProps> = ({ title, desc, img, tags, link }) => {
         className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-300"
       />
 
-      {/* Hover Overlay */}
-      <div className="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+      {/* Hover Overlay with Icons */}
+      <div className="absolute inset-0 bg-black bg-opacity-60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-6">
+        {github && (
+          <a
+            href={github}
+            target="_blank"
+            rel="noopener noreferrer"
+            title="View Code"
+            className="text-gray-300 hover:text-[#6e5494] transform hover:scale-125 transition duration-300"
+          >
+            <FaGithub className="text-3xl" />
+          </a>
+        )}
         <a
-          href={link}
+          href={vercel}
           target="_blank"
           rel="noopener noreferrer"
-          className="px-4 py-2 bg-white text-black rounded-md hover:bg-gray-200"
+          title="View Project"
+          className="text-gray-300 hover:text-[#000000] transform hover:scale-125 transition duration-300"
         >
-          View Project
+          <SiVercel className="text-3xl" />
         </a>
       </div>
 
@@ -52,7 +67,7 @@ const Card: React.FC<CardProps> = ({ title, desc, img, tags, link }) => {
           {tags.map((tag, index) => (
             <span
               key={index}
-              className={`inline-block px-2 py-1 rounded-full text-xs font-semibold mr-2 mt-2 ${
+              className={`inline-block px-2 py-1 rounded-full text-xs font-semibold ${
                 tagColors[tag] || "bg-gray-500 text-white"
               }`}
             >

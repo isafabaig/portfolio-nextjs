@@ -1,4 +1,5 @@
 "use client";
+
 import React from "react";
 import { motion } from "framer-motion";
 import CVSection from "@/components/CVSection";
@@ -18,7 +19,7 @@ const skills = [
   { name: "Python", color: "text-green-600", icon: "🐍", desc: "Exploring backend and automation" }
 ];
 
-export default function Aboutdetail() {
+export default function AboutDetail() {
   return (
     <div className="min-h-screen px-6 py-16 flex flex-col items-center" data-aos="fade-up">
       {/* Heading */}

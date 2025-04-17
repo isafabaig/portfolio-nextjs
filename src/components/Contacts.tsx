@@ -12,9 +12,9 @@ const Contacts = () => {
         {/* Left Info Section */}
         <div className="flex flex-col justify-between">
           <div>
-            <h2 className="text-gray-800 text-3xl font-bold mb-4">Let's Connect</h2>
+            <h2 className="text-gray-800 text-3xl font-bold mb-4">Let&apos;s Connect</h2>
             <p className="text-gray-600 text-sm">
-              Have an idea, project, or just want to chat about tech? Reach out and I'll get back to you as soon as possible!
+              Have an idea, project, or just want to chat about tech? Reach out and I&apos;ll get back to you as soon as possible!
             </p>
 
             {/* Email */}
@@ -34,12 +34,20 @@ const Contacts = () => {
             <div className="mt-8">
               <p className="text-gray-800 font-semibold mb-3">Social Profiles</p>
               <div className="flex space-x-5">
-                <a href="https://www.linkedin.com/in/safa-aamir-823b582b1/" target="_blank" rel="noopener noreferrer"
-                  className="hover:scale-110 transition-transform">
+                <a
+                  href="https://www.linkedin.com/in/safa-aamir-823b582b1/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:scale-110 transition-transform"
+                >
                   <FaLinkedin size={28} className="text-blue-700" />
                 </a>
-                <a href="https://github.com/isafabaig" target="_blank" rel="noopener noreferrer"
-                  className="hover:scale-110 transition-transform">
+                <a
+                  href="https://github.com/isafabaig"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:scale-110 transition-transform"
+                >
                   <FaGithub size={28} className="text-gray-800" />
                 </a>
               </div>

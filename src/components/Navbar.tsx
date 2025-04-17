@@ -2,7 +2,6 @@
 
 import React, { useState } from "react";
 import { MdMenu, MdClose } from "react-icons/md";
-import Image from "next/image";
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);

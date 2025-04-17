@@ -45,7 +45,7 @@ export default function AboutDetail() {
         animate={{ opacity: 1 }}
         transition={{ duration: 1, delay: 0.3 }}
       >
-        I am a <strong>passionate frontend developer</strong> dedicated to crafting <strong>responsive</strong> and <strong>interactive web experiences</strong>. I specialize in modern <strong>UI frameworks</strong> like Next.js and Tailwind CSS, and I'm currently <strong>exploring Python</strong> to expand my skills into <strong>backend development and automation</strong>. I love building things that look great and work even better.
+        I am a <strong>passionate frontend developer</strong> dedicated to crafting <strong>responsive</strong> and <strong>interactive web experiences</strong>. I specialize in modern <strong>UI frameworks</strong> like Next.js and Tailwind CSS, and I&apos;m currently <strong>exploring Python</strong> to expand my skills into <strong>backend development and automation</strong>. I love building things that look great and work even better.
       </motion.p>
 
       {/* Skills Section */}
